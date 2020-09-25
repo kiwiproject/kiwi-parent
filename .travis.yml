@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - openjdk11
+
+git:
+  depth: false
+
+addons:
+  sonarcloud:
+    organization: "kiwiproject"
+    token:
+      secure: "X5mzFxEYATXTRDhIdCKJhyLoj4v77IppGm2r1eHBnRLRvMyW6LY1vBoL8NxerislozEYG+8/DXJ0LBRoOjo1W8J3cv8JyqOUDYvbfqnn69Epg2e/6AzRjE46SXv0cXo4QVfHIJML0DeC35E05ZvVf1yeP4IXtq42l9trpQrptdLuzshATA6fvN4Cd8GxFDsWoHdGI4kT/IysmoB0poaG3F2sM2W6x6XR4LcjjK5qFSSZrtl4LbVDFE1vFG2T/hEn4wrdW2aaq9/8d3bX+B/O106SyqEggDHWnk1PMs3Zsz662rdWXZo8RsUN3kOf+F4yOA6BCe2AZDUNOilI7z7MLAll1HfldrEBYQY3KEtRsPHJonxpsR6S1spxnJNfx0cbWj1CIMJHfN56DO2zhaj0oNVn9ye5DdHbvyCYa3oN/LBq2x6N1oNhqj9noSGtR2RLxQV4J4wzNCkJRuDkdiaQdfzMVwqufN4jieaxoSeeUgccXfBslJl1iMEPaDkf5LqP1m+QuM2WKUNnbOM/oV51uU4rB3LYEkuCniij3sY+d6nvk0i+AXeWFy6TDGyAWXzA/+e4RAeyXqpB11hSOZXoNOwqewLu9x/zzqdaNkrhCycA7PIUvnHUH/UPM5syjqtp4ptb+A/ZQH6nddunaUu4VOhTIR/lTG7gh3tm11wc3C0="
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean package sonar:sonar -Dsonar.projectKey=kiwiproject_kiwi-parent
