@@ -68,7 +68,7 @@
         <slf4j-api.version>1.7.30</slf4j-api.version>
 
         <!-- Versions for provided dependencies -->
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
 
         <!-- Versions for optional dependencies -->
         <!-- Nothing to see here. Move along, move along... -->
