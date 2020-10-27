@@ -78,7 +78,7 @@
         <awaitility.version>4.0.3</awaitility.version>
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <logback-classic.version>1.2.3</logback-classic.version>
-        <mockito.version>3.5.15</mockito.version>
+        <mockito.version>3.6.0</mockito.version>
 
         <!-- Versions for plugins -->
         <jacoco-maven-plugin.version>0.8.6</jacoco-maven-plugin.version>
