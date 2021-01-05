@@ -17,3 +17,6 @@ buildNumber.properties
 .idea
 *.iml
 
+# Deployment logs
+maven-central-deploy.log
+
