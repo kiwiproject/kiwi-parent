@@ -106,21 +106,6 @@
         <maven-compiler-plugin.java.release>11</maven-compiler-plugin.java.release>
         <maven-compiler-plugin.encoding>UTF-8</maven-compiler-plugin.encoding>
 
-        <!--
-            TODO: Remove this once we verify that sonar-maven-plugin 3.8.0.2131 works
-
-            Sonar properties, until version 3.8 of the Maven Sonar Scanner is released.
-            As of 2020-09-25 version 3.8 has not been released.
-
-            References:
-            * https://community.sonarsource.com/t/java-parse-error-source-level-1-8-or-above-although-project-uses-11/22288
-            * https://jira.sonarsource.com/browse/MSONAR-174
-            * https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin
-            * https://search.maven.org/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin
-        -->
-        <sonar.java.source>${maven-compiler-plugin.java.release}</sonar.java.source>
-        <sonar.java.target>${maven-compiler-plugin.java.release}</sonar.java.target>
-
         <!-- These will be overridden in each repo using this parent -->
         <sonar.projectKey>kiwiproject_kiwi-parent</sonar.projectKey>
 
