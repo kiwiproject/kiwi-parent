@@ -18,3 +18,4 @@ updates:
       - dependency-name: "org.assertj:assertj-core"
       - dependency-name: "org.junit.jupiter:*"
       - dependency-name: "org.mockito:mockito-core"
+      - dependency-name: "org.junit-pioneer:*"
