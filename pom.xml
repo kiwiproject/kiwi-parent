@@ -180,7 +180,10 @@
             <artifactId>junit-pioneer</artifactId>
             <version>${junit-pioneer.version}</version>
             <scope>test</scope>
-            <!-- Because Pioneer is behind Jupiter's current version -->
+            <!-- Pioneer has typically been behind Jupiter's current version but still works.
+                 Keeping these exclusions in here until and unless they cause problems, and
+                 let Pioneer use whatever version of JUnit we are using.
+            -->
             <exclusions>
                 <exclusion>
                     <groupId>org.junit.jupiter</groupId>
