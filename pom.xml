@@ -65,7 +65,7 @@
         <arguments />
 
         <!-- Versions for required dependencies -->
-        <slf4j-api.version>1.7.31</slf4j-api.version>
+        <slf4j-api.version>1.7.32</slf4j-api.version>
 
         <!-- Versions for provided dependencies -->
         <lombok.version>1.18.20</lombok.version>
@@ -78,7 +78,7 @@
         <awaitility.version>4.1.0</awaitility.version>
         <junit.jupiter.version>5.7.2</junit.jupiter.version>
         <junit-pioneer.version>1.4.2</junit-pioneer.version>
-        <logback-classic.version>1.2.3</logback-classic.version>
+        <logback-classic.version>1.2.5</logback-classic.version>
         <mockito.version>3.11.2</mockito.version>
 
         <!-- Versions for plugins -->
