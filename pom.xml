@@ -304,10 +304,11 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>${maven-release-plugin.version}</version>
                 <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                     <mavenExecutorId>forked-path</mavenExecutorId>
-                    <useReleaseProfile>false</useReleaseProfile>
-                    <arguments>${arguments} -Prelease</arguments>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <preparationGoals>clean test</preparationGoals>
                 </configuration>
             </plugin>
 
@@ -347,13 +348,29 @@
 
     <profiles>
         <profile>
-            <id>release</id>
+            <id>deploy</id>
+            <activation>
+                <property>
+                    <name>pushToCentral</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <properties>
+                <gpg.keyname><!-- Need to add GPG key --></gpg.keyname>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>${maven-gpg-plugin.version}</version>
+                        <!-- This allows GPG to loopback for the passphrase allowing to use the envs -->
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -378,6 +395,10 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <doclint>none</doclint>
+                            <quiet>true</quiet>
+                            <notimestamp>true</notimestamp>
+
                             <!-- Make JavaDoc understand the "new" tags introduced in Java 8 (!) -->
                             <tags>
                                 <tag>
@@ -423,6 +444,15 @@
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
+                        <executions>
+                            <execution>
+                                <id>nexus-deploy</id>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>deploy</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

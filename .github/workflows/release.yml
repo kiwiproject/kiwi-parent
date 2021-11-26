@@ -1,0 +1,28 @@
+name: release
+on: workflow_dispatch
+
+jobs:
+  release:
+    name: Cut new release
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-jdk@v2.3.1
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          check-latest: true
+
+      - name: Cache Maven packages
+        uses: actions/cache@v2.1.7
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ secrets.CACHE_VERSION }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-${{ secrets.CACHE_VERSION }}-
+
+      - name: Cut Release
+        run: mvn -B -V -ntp release:clean release:prepare release:perform
