@@ -78,7 +78,7 @@
         <awaitility.version>4.1.1</awaitility.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <junit-pioneer.version>1.5.0</junit-pioneer.version>
-        <logback-classic.version>1.2.5</logback-classic.version>
+        <logback-classic.version>1.2.8</logback-classic.version>
         <mockito.version>4.1.0</mockito.version>
 
         <!-- Versions for plugins -->
