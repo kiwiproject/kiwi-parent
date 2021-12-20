@@ -78,7 +78,7 @@
         <awaitility.version>4.1.1</awaitility.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <junit-pioneer.version>1.5.0</junit-pioneer.version>
-        <logback-classic.version>1.2.9</logback-classic.version>
+        <logback.version>1.2.9</logback.version>
         <mockito.version>4.2.0</mockito.version>
 
         <!-- Versions for plugins -->
@@ -207,7 +207,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback-classic.version}</version>
+            <version>${logback.version}</version>
             <scope>test</scope>
             <!-- We are making the assumption that our projects define their own version of slf4j-api -->
             <exclusions>
