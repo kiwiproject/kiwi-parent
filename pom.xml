@@ -65,7 +65,7 @@
         <arguments />
 
         <!-- Versions for required dependencies -->
-        <slf4j-api.version>1.7.33</slf4j-api.version>
+        <slf4j-api.version>1.7.35</slf4j-api.version>
 
         <!-- Versions for provided dependencies -->
         <lombok.version>1.18.22</lombok.version>
