@@ -65,7 +65,7 @@
         <arguments />
 
         <!-- Versions for required dependencies -->
-        <slf4j-api.version>1.7.36</slf4j-api.version>
+        <!-- Nothing to see here. Move along, move along... -->
 
         <!-- Versions for provided dependencies -->
         <lombok.version>1.18.24</lombok.version>
@@ -78,7 +78,6 @@
         <awaitility.version>4.2.0</awaitility.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <junit-pioneer.version>1.7.0</junit-pioneer.version>
-        <logback.version>1.2.11</logback.version>
         <mockito.version>4.4.0</mockito.version>
 
         <!-- Versions for plugins -->
@@ -119,11 +118,7 @@
 
         <!-- required dependencies -->
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j-api.version}</version>
-        </dependency>
+        <!-- Nothing to see here...move along, move along... -->
 
         <!-- provided dependencies -->
 
@@ -200,20 +195,6 @@
                 <exclusion>
                     <groupId>org.junit.platform</groupId>
                     <artifactId>junit-platform-launcher</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-            <scope>test</scope>
-            <!-- We are making the assumption that our projects define their own version of slf4j-api -->
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
