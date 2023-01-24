@@ -16,4 +16,4 @@ jobs:
       - uses: FantasticFiasco/action-update-license-year@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: LICENSE.txt
+          path: LICENSE.txt
