@@ -82,6 +82,7 @@
 
         <!-- Versions for plugins -->
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
+        <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.0.0</maven-deploy-plugin.version>
@@ -350,6 +351,26 @@
                         </executions>
                     </plugin>
 
+                    <!-- Delombok sources so that javadoc can be generated correctly -->
+                    <plugin>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok-maven-plugin</artifactId>
+                        <version>${lombok-maven-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>delombok</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>delombok</goal>
+                                </goals>
+                                <configuration>
+                                    <addOutputDirectory>false</addOutputDirectory>
+                                    <sourceDirectory>src/main/java</sourceDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
@@ -363,6 +384,9 @@
                             </execution>
                         </executions>
                         <configuration>
+                            <!-- Make javadoc use the de-lomboked code -->
+                            <sourcepath>target/generated-sources/delombok</sourcepath>
+
                             <!-- Make JavaDoc understand the "new" tags introduced in Java 8 (!) -->
                             <tags>
                                 <tag>
