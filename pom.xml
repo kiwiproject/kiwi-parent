@@ -84,6 +84,7 @@
         <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
         <jshell-maven-plugin.version>1.4</jshell-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
+        <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
         <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.1</maven-deploy-plugin.version>
@@ -420,6 +421,34 @@
                                 </tag>
                             </tags>
                         </configuration>
+                    </plugin>
+
+                    <!--
+                        After the javadoc runs, duplicate .java files will exist in the
+                        target/generated-sources/delombok directory.
+
+                        These duplicate classes will be seen by IDEs and cause problems.
+                        The following ensures we delete the delomboked sources once we
+                        no longer need them after generating the javadoc.
+                    -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>${maven-antrun-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>delete-delombok-generated-sources</id>
+                                <phase>verify</phase>  <!-- ensure this executes after javadoc -->
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <delete dir="${project.build.directory}/generated-sources/delombok"/>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
 
                     <plugin>
