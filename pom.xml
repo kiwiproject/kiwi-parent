@@ -444,7 +444,11 @@
                                 </goals>
                                 <configuration>
                                     <target>
+                                        <!-- Delete the delomboked sources directory -->
                                         <delete dir="${project.build.directory}/generated-sources/delombok" />
+
+                                        <!-- Delete the checkout directory created during the release process -->
+                                        <delete dir="${project.build.directory}/checkout"/>
                                     </target>
                                 </configuration>
                             </execution>
@@ -465,7 +469,7 @@
                         </executions>
                     </plugin>
 
-                    <plugin>
+                    <!--<plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>${nexus-staging-maven-plugin.version}</version>
@@ -475,7 +479,7 @@
                             <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
-                    </plugin>
+                    </plugin>-->
                 </plugins>
             </build>
         </profile>
