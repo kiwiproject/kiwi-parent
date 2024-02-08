@@ -430,9 +430,6 @@
                         These duplicate classes will be seen by IDEs and cause problems.
                         The following ensures we delete the delomboked sources once we
                         no longer need them after generating the javadoc.
-
-                        Also remove the working copy of the repository created by
-                        the Maven Release Plugin.
                     -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -449,9 +446,6 @@
                                     <target>
                                         <!-- Delete the delomboked sources directory -->
                                         <delete dir="${project.build.directory}/generated-sources/delombok" />
-
-                                        <!-- Delete the checkout directory created during the release process -->
-                                        <delete dir="${project.build.directory}/checkout" />
                                     </target>
                                 </configuration>
                             </execution>
