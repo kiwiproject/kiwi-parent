@@ -68,7 +68,7 @@
         <!-- Nothing to see here. Move along, move along... -->
 
         <!-- Versions for provided dependencies -->
-        <lombok.version>1.18.32</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
 
         <!-- Versions for optional dependencies -->
         <!-- Nothing to see here. Move along, move along... -->
