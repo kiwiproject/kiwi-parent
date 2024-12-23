@@ -76,7 +76,7 @@
         <!-- Versions for test dependencies -->
         <assertj.version>3.26.3</assertj.version>
         <awaitility.version>4.2.2</awaitility.version>
-        <junit.jupiter.version>5.11.3</junit.jupiter.version>
+        <junit.jupiter.version>5.11.4</junit.jupiter.version>
         <junit-pioneer.version>2.3.0</junit-pioneer.version>
         <mockito.version>5.14.2</mockito.version>
 
