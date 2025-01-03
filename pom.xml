@@ -74,11 +74,11 @@
         <!-- Nothing to see here. Move along, move along... -->
 
         <!-- Versions for test dependencies -->
-        <assertj.version>3.27.0</assertj.version>
+        <assertj.version>3.27.1</assertj.version>
         <awaitility.version>4.2.2</awaitility.version>
         <junit.jupiter.version>5.11.4</junit.jupiter.version>
         <junit-pioneer.version>2.3.0</junit-pioneer.version>
-        <mockito.version>5.14.2</mockito.version>
+        <mockito.version>5.15.2</mockito.version>
 
         <!-- Versions for plugins -->
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
