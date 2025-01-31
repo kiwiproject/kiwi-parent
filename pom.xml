@@ -4,7 +4,7 @@
 
     <groupId>org.kiwiproject</groupId>
     <artifactId>kiwi-parent</artifactId>
-    <version>3.0.23-SNAPSHOT</version>
+    <version>3.0.22-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
