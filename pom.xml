@@ -68,7 +68,7 @@
         <!-- Nothing to see here. Move along, move along... -->
 
         <!-- Versions for provided dependencies -->
-        <lombok.version>1.18.36</lombok.version>
+        <lombok.version>1.18.38</lombok.version>
 
         <!-- Versions for optional dependencies -->
         <!-- Nothing to see here. Move along, move along... -->
@@ -81,7 +81,7 @@
         <mockito.version>5.16.1</mockito.version>
 
         <!-- Versions for plugins -->
-        <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <jshell-maven-plugin.version>1.4</jshell-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
