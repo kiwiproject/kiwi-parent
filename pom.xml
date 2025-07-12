@@ -49,17 +49,6 @@
         <tag>HEAD</tag>
     </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
         <!-- Collect arguments for use by release plugin -->
         <arguments />
@@ -81,6 +70,7 @@
         <mockito.version>5.18.0</mockito.version>
 
         <!-- Versions for plugins -->
+        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
         <jshell-maven-plugin.version>1.4</jshell-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
@@ -98,7 +88,6 @@
         <maven-site-plugin.version>3.21.0</maven-site-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
         <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
         <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
 
@@ -121,7 +110,7 @@
 
         <dependencies>
 
-            <!-- ensure all JUnit dependencies have correct version from the JUnit BOM -->
+            <!-- ensure all JUnit dependencies have the correct version from the JUnit BOM -->
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
@@ -359,7 +348,7 @@
                         </executions>
                     </plugin>
 
-                    <!-- Delombok sources so that javadoc can be generated correctly -->
+                    <!-- Delombok sources so that Javadoc can be generated correctly -->
                     <plugin>
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok-maven-plugin</artifactId>
@@ -399,10 +388,10 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <!-- Make javadoc use the de-lomboked code -->
+                            <!-- Make Javadoc use the de-lomboked code -->
                             <sourcepath>target/generated-sources/delombok</sourcepath>
 
-                            <!-- Make JavaDoc understand the "new" tags introduced in Java 8 (!) -->
+                            <!-- Make Javadoc understand the "new" tags introduced in Java 8 (!) -->
                             <tags>
                                 <tag>
                                     <name>apiNote</name>
@@ -424,12 +413,12 @@
                     </plugin>
 
                     <!--
-                        After the javadoc runs, duplicate .java files will exist in the
+                        After the Javadoc runs, duplicate .java files will exist in the
                         target/generated-sources/delombok directory.
 
                         These duplicate classes will be seen by IDEs and cause problems.
                         The following ensures we delete the delomboked sources once we
-                        no longer need them after generating the javadoc.
+                        no longer need them after generating the Javadoc.
                     -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -467,15 +456,14 @@
                     </plugin>
 
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>${nexus-staging-maven-plugin.version}</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${central-publishing-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>published</waitUntil>
                         </configuration>
                     </plugin>
                 </plugins>
