@@ -67,7 +67,7 @@
         <awaitility.version>4.3.0</awaitility.version>
         <junit.jupiter.version>5.13.4</junit.jupiter.version>
         <junit-pioneer.version>2.3.0</junit-pioneer.version>
-        <mockito.version>5.19.0</mockito.version>
+        <mockito.version>5.20.0</mockito.version>
 
         <!-- Versions for plugins -->
         <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
