@@ -71,7 +71,7 @@
 
         <!-- Versions for plugins -->
         <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
-        <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <jshell-maven-plugin.version>1.4</jshell-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
