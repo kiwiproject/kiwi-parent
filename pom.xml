@@ -70,7 +70,7 @@
         <mockito.version>5.23.0</mockito.version>
 
         <!-- Versions for plugins -->
-        <central-publishing-maven-plugin.version>0.10.0</central-publishing-maven-plugin.version>
+        <central-publishing-maven-plugin.version>0.11.0</central-publishing-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
         <jshell-maven-plugin.version>1.4</jshell-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
