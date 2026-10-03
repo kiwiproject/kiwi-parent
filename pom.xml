@@ -341,10 +341,37 @@
                 <version>${sonar-maven-plugin.version}</version>
             </plugin>
 
+            <!--
+            Ignore alpha, beta, release candidate, and milestone versions so the versions:*
+            goals only suggest stable releases. Each regex must match the whole version
+            string (hence the leading .+ and trailing .*) and is case-insensitive.
+            -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${versions-maven-plugin.version}</version>
+                <configuration>
+                    <ruleSet>
+                        <ignoreVersions>
+                            <ignoreVersion>
+                                <type>regex</type>
+                                <version>(?i).+-alpha.*</version>
+                            </ignoreVersion>
+                            <ignoreVersion>
+                                <type>regex</type>
+                                <version>(?i).+-beta.*</version>
+                            </ignoreVersion>
+                            <ignoreVersion>
+                                <type>regex</type>
+                                <version>(?i).+-rc.*</version>
+                            </ignoreVersion>
+                            <ignoreVersion>
+                                <type>regex</type>
+                                <version>(?i).+-m\d.*</version>
+                            </ignoreVersion>
+                        </ignoreVersions>
+                    </ruleSet>
+                </configuration>
             </plugin>
 
         </plugins>
