@@ -4,7 +4,7 @@
 
     <groupId>org.kiwiproject</groupId>
     <artifactId>kiwi-parent</artifactId>
-    <version>3.0.45-SNAPSHOT</version>
+    <version>3.0.45</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -46,7 +46,7 @@
         <connection>scm:git:https://github.com/kiwiproject/kiwi-parent.git</connection>
         <developerConnection>scm:git:git@github.com:kiwiproject/kiwi-parent.git</developerConnection>
         <url>https://github.com/kiwiproject/kiwi-parent</url>
-        <tag>HEAD</tag>
+        <tag>v3.0.45</tag>
     </scm>
 
     <properties>
@@ -100,7 +100,7 @@
         <maven-compiler-plugin.encoding>UTF-8</maven-compiler-plugin.encoding>
 
         <!-- Must exist (empty) so surefire's @{argLine} late replacement works; see the surefire config -->
-        <argLine/>
+        <argLine />
 
         <!-- These will be overridden in each repo using this parent -->
         <sonar.projectKey>kiwiproject_kiwi-parent</sonar.projectKey>
