@@ -275,6 +275,7 @@
                 <executions>
                     <execution>
                         <id>define-dependency-path-properties</id>
+                        <phase>process-test-classes</phase>
                         <goals>
                             <goal>properties</goal>
                         </goals>
