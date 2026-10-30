@@ -72,7 +72,7 @@
         <!-- Versions for plugins -->
         <central-publishing-maven-plugin.version>0.12.0</central-publishing-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-        <jshell-maven-plugin.version>1.4</jshell-maven-plugin.version>
+        <jshell-maven-plugin.version>2.0.0</jshell-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <maven-antrun-plugin.version>3.2.0</maven-antrun-plugin.version>
         <maven-clean-plugin.version>3.5.0</maven-clean-plugin.version>
@@ -235,7 +235,7 @@
             </plugin>
 
             <plugin>
-                <groupId>com.github.johnpoth</groupId>
+                <groupId>org.kiwiproject</groupId>
                 <artifactId>jshell-maven-plugin</artifactId>
                 <version>${jshell-maven-plugin.version}</version>
             </plugin>
